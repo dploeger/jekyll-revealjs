@@ -14,6 +14,7 @@ First, [install Jekyll][]. After that, clone this repository and create a branch
 for your new presentation:
 
     git clone --recursive https://github.com/dploeger/jekyll-revealjs.git
+    git branch presentation1
     git checkout presentation1
 
 Clean the Example presentation:
@@ -25,6 +26,13 @@ After that, add your slides into the _posts-subdirectory in clean Markdown synta
 and you're ready to go with building your presentation with Jekyll:
 
     jekyll build
+
+You can even manage multiple presentations using the power of git. Simple branch from the
+master branch to create a new presentation:
+
+    git checkout master
+    git branch presentation2
+    git checkout presentation2
 
 ## Slide filenames
 
