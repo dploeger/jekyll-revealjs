@@ -3,3 +3,4 @@ markdown: redcarpet
 pygments: true
 markdown_ext: ignoreme
 reveal_theme: default
+reveal_transition: default
