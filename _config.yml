@@ -2,3 +2,4 @@ name: Jekyll and Reveal.js
 markdown: redcarpet
 pygments: true
 markdown_ext: ignoreme
+reveal_theme: default
