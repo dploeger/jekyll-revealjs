@@ -1,3 +1,4 @@
-name: Your New Jekyll Site
+name: Jekyll and Reveal.js
 markdown: redcarpet
 pygments: true
+markdown_ext: ignoreme
