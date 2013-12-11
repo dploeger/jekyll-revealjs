@@ -51,3 +51,45 @@ and so forth.
 [Reveal.js]:      http://lab.hakim.se/reveal-js/#/
 [Jekyll]:         http://jekyllrb.com/
 [install Jekyll]: http://jekyllrb.com/docs/installation/  
+
+## Markdown extensions
+
+Jekyll-Revealjs implements the following extensions:
+
+To use multiple slides in one slide file, use a newline, three dashes and another newline like this:
+
+    # Slide 1
+    
+    This is the content of Slide 1
+    
+    ---
+    
+    # Slide 2
+    
+    This is the content of Slide 2
+
+To use vertical slides, do the same, but use two dashes:
+
+    # Slide 1
+    
+    This is the content of Slide 1
+    
+    --
+    
+    And this is a vertical slide below Slide 1
+
+To use fragments, you can use the features also described in the Reveal.js-documentation:
+
+    # Slide
+    
+    * This <!-- .element: class="fragment" -->
+    * will <!-- .element: class="fragment" -->
+    * come one by one <!-- .element: class="fragment" -->
+
+Use the same technique to set slide backgrounds:
+
+    # Slide
+    
+    <!-- .slide: data-background="#ffffff" -->
+    
+    This slide has a white background
