@@ -1,6 +1,6 @@
 # jekyll-reveal.js
 
-A Jekyll-based framework for creating presentations based on Reveal.js.
+A Jekyll-based framework for creating presentations based on Reveal.js and markdown.
 
 ## Introduction
 
