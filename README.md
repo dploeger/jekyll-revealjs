@@ -1,12 +1,12 @@
-# Jekyll & Reveal.js
+# jekyll-reveal.js
 
-A Jekyll-Site for creating presentations based on Reveal.js
+A Jekyll-based framework for creating presentations based on Reveal.js.
 
 ## Introduction
 
-If you like [Reveal.js][] for creating your online presentations and like the site
-management [Jekyll][] gives you, here's an easy way to create a presentation using
-Jekyll and Reveal.js
+If you like [Reveal.js][] for creating your online presentations, like the site
+management [Jekyll][] gives you and like Markdown because of its easy and clean look, 
+here's an easy way to create a presentation using Jekyll, Markdown and Reveal.js.
 
 ## Howto
 
@@ -27,12 +27,30 @@ and you're ready to go with building your presentation with Jekyll:
 
     jekyll build
 
-You can even manage multiple presentations using the power of git. Simple branch from the
+You can even manage multiple presentations using the power of git. Simply branch from the
 master branch to create a new presentation:
 
     git checkout master
     git branch presentation2
     git checkout presentation2
+
+## Slide filenames
+
+Because we're using the Jekyll posts-framework to easily gather the slides for the presentation, 
+we're bound to the conventions of Jekyll posts, namely being
+
+    <year>-<month>-<day>-<title>.md
+
+We recommend naming the files like
+
+    1-1-1-1-welcome.md
+    1-1-1-2-topics.md
+
+and so forth. 
+
+Jekyll will assume, that each post has been made on the first of january, 2001 (which is of no interest
+for a presentation). The additional number is for sorting purposes. After that comes a title to identify 
+the specific slide (which is actually only for the presentation author, Jekyll doesn't care about it).
 
 ## Configuring the presentation
 
@@ -56,21 +74,10 @@ there and referencing that directory in the configuration "reveal_theme_path".
 Don't mess with the reveal.js subdirectory as it is a subrepository and doesn't adhere to your repository's
 branches.
 
-## Slide filenames
-
-Because we're using the Jekyll post framework here, we're bound to the conventions
-of Jekyll posts, namely being
-
-    <year>-<month>-<day>-<title>.md
-
-But everything should work well, if you just name the files
-
-    1-1-1-1.md
-    1-1-1-2.md
-
-and so forth.
-
 ## Markdown extensions and simplification
+
+Reveal.js already includes a markdown interpreter, which we use for jekyll-reveal.js. We have already
+configured it and included some simplification just for you!
 
 ### Multiple slides
 
@@ -129,3 +136,14 @@ plugin:
 [options]: https://github.com/hakimel/reveal.js#configuration
 [depedencies]: https://github.com/hakimel/reveal.js#dependencies
 
+### Speaker notes
+
+jekyll-reveal.js is configured, so that speaker notes are identified after an introductory "Note:"-tag:
+
+    # Slide
+
+    Some slide content
+
+    Note:
+
+    This is only displayed in the speaker notes.
