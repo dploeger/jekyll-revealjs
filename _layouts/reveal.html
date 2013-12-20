@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>{{ page.title }}</title>
+		<title>{{ site.title }}</title>
 
 		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
 		<meta name="author" content="Hakim El Hattab">
@@ -14,19 +14,19 @@
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="reveal.js/css/reveal.min.css">
-		<link rel="stylesheet" href="reveal.js/css/theme/{{ site.reveal_theme }}.css" id="theme">
+		<link rel="stylesheet" href="{{ site.reveal_path }}css/reveal.min.css">
+		<link rel="stylesheet" href="{{ site.reveal_theme_path }}{{ site.reveal_theme }}" id="theme">
 
 		<!-- For syntax highlighting -->
-		<link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
+		<link rel="stylesheet" href="{{ site.reveal_path }}lib/css/zenburn.css">
 
 		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
 		<script>
-			document.write( '<link rel="stylesheet" href="reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+			document.write( '<link rel="stylesheet" href="{{ site.reveal_path }}css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
 		</script>
 
 		<!--[if lt IE 9]>
-		<script src="reveal.js/lib/js/html5shiv.js"></script>
+		<script src="{{ site.reveal_path }}lib/js/html5shiv.js"></script>
 		<![endif]-->
 	</head>
 
@@ -42,8 +42,8 @@
 
 		</div>
 
-		<script src="reveal.js/lib/js/head.min.js"></script>
-		<script src="reveal.js/js/reveal.min.js"></script>
+		<script src="{{ site.reveal_path }}lib/js/head.min.js"></script>
+		<script src="{{ site.reveal_path }}js/reveal.min.js"></script>
 
 		<script>
 
@@ -58,18 +58,28 @@
 				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
 				transition: '{{ site.reveal_transition }}', // default/cube/page/concave/zoom/linear/fade/none
 
-				// Parallax scrolling
-				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
-				// parallaxBackgroundSize: '2100px 900px',
+                {% if site.reveal_options %}
+
+                {{ site.reveal_options | append:',' }}
+
+                {% endif %}
 
 				// Optional libraries used to extend on reveal.js
 				dependencies: [
-					{ src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-					{ src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					{ src: '{{ site.reveal_path }}lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '{{ site.reveal_path }}plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '{{ site.reveal_path }}plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '{{ site.reveal_path }}plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '{{ site.reveal_path }}plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    {% if site.reveal_notes_server %}
+                    { src: '{{ site.reveal_path }}socket.io/socket.io.js', async: true },
+                    { src: '{{ site.reveal_path }}plugin/notes-server/client.js', async: true }
+                    {% else %}
+					{ src: '{{ site.reveal_path }}plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                    {% endif %}
+                    {% if site.reveal_dependencies %}
+                    , {{ site.reveal_dependencies }}
+                    {% endif %}
 				]
 			});
 

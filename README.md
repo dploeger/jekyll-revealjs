@@ -34,6 +34,28 @@ master branch to create a new presentation:
     git branch presentation2
     git checkout presentation2
 
+## Configuring the presentation
+
+You can configure almost any reveal.js setting using the _config.yml-settings file in the
+root directory.
+
+* title: The title of your presentation (displayed in the browser's title bar)
+* reveal_theme: The reveal.js-theme to use [default.css]
+* reveal_transition: The reveal.js-transition to use [default]
+* reveal_theme_path: The path to the reveal.js-theme (can be changed for custom themes) [reveal.js/css/theme/]
+* reveal_notes_server: Wether to support the speaker notes server [false (only local speaker notes)]
+* reveal_options: Additional reveal.js [options][]
+* reveal_dependencies: Additional reveal.js [dependencies][]
+* reveal_path: Path to the reveal.js-installation [reveal.js]
+
+## Custom reveal.js-themes
+
+If you want to use your custom reveal.js-theme, we recommend adding a directory "theme", putting the file(s)
+there and referencing that directory in the configuration "reveal_theme_path".
+
+Don't mess with the reveal.js subdirectory as it is a subrepository and doesn't adhere to your repository's
+branches.
+
 ## Slide filenames
 
 Because we're using the Jekyll post framework here, we're bound to the conventions
@@ -48,13 +70,9 @@ But everything should work well, if you just name the files
 
 and so forth.
 
-[Reveal.js]:      http://lab.hakim.se/reveal-js/#/
-[Jekyll]:         http://jekyllrb.com/
-[install Jekyll]: http://jekyllrb.com/docs/installation/  
+## Markdown extensions and simplification
 
-## Markdown extensions
-
-Jekyll-Revealjs implements the following extensions:
+### Multiple slides
 
 To use multiple slides in one slide file, use a newline, three dashes and another newline like this:
 
@@ -68,6 +86,8 @@ To use multiple slides in one slide file, use a newline, three dashes and anothe
     
     This is the content of Slide 2
 
+### Vertical slides
+
 To use vertical slides, do the same, but use two dashes:
 
     # Slide 1
@@ -78,18 +98,34 @@ To use vertical slides, do the same, but use two dashes:
     
     And this is a vertical slide below Slide 1
 
-To use fragments, you can use the features also described in the Reveal.js-documentation:
+### Fragments
+
+Fragments allow slide elements to come one by one. This is often used in lists to subsequently show
+fragments of a list during a presentation.
+
+To use fragments, jekyll-reveal.js includes a jekyll-plugin, that simplifies the use of fragments
+in markdown. To specify the current element as a fragment, use the {% fragment %}-tag like this:
 
     # Slide
     
-    * This <!-- .element: class="fragment" -->
-    * will <!-- .element: class="fragment" -->
-    * come one by one <!-- .element: class="fragment" -->
+    * This {% fragment %}
+    * will {% fragment %}
+    * come one by one {% fragment %}
 
-Use the same technique to set slide backgrounds:
+### Slide backgrounds
+
+To modify the background of the current slide, jekyll-reveal.js also includes a simplification
+plugin:
 
     # Slide
     
-    <!-- .slide: data-background="#ffffff" -->
+    {% background white %}
     
     This slide has a white background
+
+[Reveal.js]:      http://lab.hakim.se/reveal-js/#/
+[Jekyll]:         http://jekyllrb.com/
+[install Jekyll]: http://jekyllrb.com/docs/installation/  
+[options]: https://github.com/hakimel/reveal.js#configuration
+[depedencies]: https://github.com/hakimel/reveal.js#dependencies
+
