@@ -8,6 +8,8 @@ If you like [Reveal.js][] for creating your online presentations, like the site
 management [Jekyll][] gives you and like [Markdown][] because of its easy and clean look, 
 here's an easy way to create a presentation using Jekyll, Markdown and Reveal.js.
 
+See the [example presenation][] created using the contents in this repository and "jekyll build".
+
 ## Howto
 
 First, [install Jekyll][]. After that, clone this repository and create a branch
@@ -145,8 +147,8 @@ jekyll-reveal.js is configured, so that speaker notes are identified after an in
 [Reveal.js]:      http://lab.hakim.se/reveal-js/#/
 [Jekyll]:         http://jekyllrb.com/
 [Markdown]:       http://daringfireball.net/projects/markdown/ 
+[example presentation]: http://dploeger.github.io/jekyll-revealjs/example
 [install Jekyll]: http://jekyllrb.com/docs/installation/  
 [options]: https://github.com/hakimel/reveal.js#configuration
 [depedencies]: https://github.com/hakimel/reveal.js#dependencies
-
 
