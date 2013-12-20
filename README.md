@@ -8,7 +8,7 @@ If you like [Reveal.js][] for creating your online presentations, like the site
 management [Jekyll][] gives you and like [Markdown][] because of its easy and clean look, 
 here's an easy way to create a presentation using Jekyll, Markdown and Reveal.js.
 
-See the [example presenation][] created using the contents in this repository and "jekyll build".
+See the [example presentation][] created using the contents in this repository and "jekyll build".
 
 ## Howto
 
