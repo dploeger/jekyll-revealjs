@@ -1,3 +1,3 @@
 ## Welcome
 
-Welcome to the jekyll-reveal.js example presentation.
+<img src="../img/intro_slide.png">
