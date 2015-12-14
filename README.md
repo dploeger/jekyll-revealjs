@@ -112,22 +112,22 @@ Fragments allow slide elements to come one by one. This is often used in lists t
 fragments of a list during a presentation.
 
 To use fragments, jekyll-reveal.js includes a jekyll-plugin, that simplifies the use of fragments
-in markdown. To specify the current element as a fragment, use the {% fragment %}-tag like this:
+in markdown. To specify the current element as a fragment, use the {% include fragment.html %}-tag like this:
 
     # Slide
     
-    * This {% fragment %}
-    * will {% fragment %}
-    * come one by one {% fragment %}
+    * This {% include fragment.html %}
+    * will {% include fragment.html %}
+    * come one by one {% include fragment.html %}
 
 ### Slide backgrounds
 
 To modify the background of the current slide, jekyll-reveal.js also includes a simplification
-plugin:
+snippet:
 
     # Slide
     
-    {% background white %}
+    {% include background.html color="white" %}
     
     This slide has a white background
 
