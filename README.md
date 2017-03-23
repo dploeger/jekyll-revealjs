@@ -5,15 +5,13 @@ A Jekyll-based framework for creating presentations based on Reveal.js and markd
 ## Introduction
 
 If you like [Reveal.js][] for creating your online presentations, like the site
-management [Jekyll][] gives you and like [Markdown][] because of its easy and clean look, 
-here's an easy way to create a presentation using Jekyll, Markdown and Reveal.js.
+management [Jekyll][] gives you and like [Markdown][] because of its easy and clean look, here's an easy way to create a presentation using Jekyll, Markdown and Reveal.js.
 
 See the [example presentation][] created using the contents in this repository and "jekyll build".
 
 ## Howto
 
-First, [install Jekyll][]. After that, clone this repository and create a branch
-for your new presentation:
+First, [install Jekyll][]. After that, clone this repository and create a branch for your new presentation:
 
     git clone --recursive https://github.com/dploeger/jekyll-revealjs.git
     git checkout -b presentation1
@@ -23,13 +21,11 @@ Clean the Example presentation:
     git rm _posts/*
     mkdir _posts
 
-After that, add your slides into the _posts-subdirectory in clean Markdown syntax
-and you're ready to go with building your presentation with Jekyll:
+After that, add your slides into the _posts-subdirectory in clean Markdown syntax and you're ready to go with building your presentation with Jekyll:
 
     jekyll build
 
-You can even manage multiple presentations using the power of git. Simply branch from the
-master branch to create a new presentation:
+You can even manage multiple presentations using the power of git. Simply branch from the master branch to create a new presentation:
 
     git checkout master
     git branch presentation2
@@ -37,26 +33,22 @@ master branch to create a new presentation:
 
 ## Slide filenames
 
-Because we're using the Jekyll posts-framework to easily gather the slides for the presentation, 
-we're bound to the conventions of Jekyll posts, namely being
+Because we're using the Jekyll posts-framework to easily gather the slides for the presentation, we're bound to the conventions of Jekyll posts, namely being
 
     <year>-<month>-<day>-<title>.md
 
 We recommend naming the files like
 
-    1-1-1-1-welcome.md
-    1-1-1-2-topics.md
+    0000-01-01-welcome.md
+    0000-01-02-topics.md
 
-and so forth. 
+and so forth.
 
-Jekyll will assume, that each post has been made on the first of january, 2001 (which is of no interest
-for a presentation). The additional number is for sorting purposes. After that comes a title to identify 
-the specific slide (which is actually only for the presentation author, Jekyll doesn't care about it).
+Jekyll will assume, that each post has been made on the first of january, 2001 (which is of no interest for a presentation). The additional number is for sorting purposes. After that comes a title to identify the specific slide (which is actually only for the presentation author, Jekyll doesn't care about it).
 
 ## Configuring the presentation
 
-You can configure almost any reveal.js setting using the _config.yml-settings file in the
-root directory.
+You can configure almost any reveal.js setting using the _config.yml-settings file in the root directory.
 
 * title: The title of your presentation (displayed in the browser's title bar)
 * reveal_theme: The reveal.js-theme to use [default.css]
