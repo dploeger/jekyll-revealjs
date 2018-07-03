@@ -59,6 +59,10 @@ You can configure almost any reveal.js setting using the _config.yml-settings fi
 * reveal_dependencies: Additional reveal.js [dependencies][]
 * reveal_path: Path to the reveal.js-installation [reveal.js]
 
+You can also further customize the presentation:
+
+* extra_css: Additional CSS files added after the reveal theme []
+
 ## Custom reveal.js-themes
 
 If you want to use your custom reveal.js-theme, we recommend adding a directory "theme", putting the file(s)
