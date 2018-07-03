@@ -8,8 +8,7 @@
 
 		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
 		<meta name="author" content="Hakim El Hattab">
-
-		<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -69,8 +68,9 @@
 				transition: '{{ site.reveal_transition }}', // default/cube/page/concave/zoom/linear/fade/none
 
                 {% if site.reveal_options %}
-
-                {{ site.reveal_options | append:',' }}
+                    {% for option in site.reveal_options %}
+                        {{ option[0] }}: "{{ option[1] }}",
+                    {% endfor %}
 
                 {% endif %}
 
