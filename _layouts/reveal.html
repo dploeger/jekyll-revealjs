@@ -16,6 +16,11 @@
 
 		<link rel="stylesheet" href="{{ site.reveal_path }}css/reveal.css">
 		<link rel="stylesheet" href="{{ site.reveal_theme_path }}{{ site.reveal_theme }}" id="theme">
+{% if site.extra_css %}
+    {% for css_file in site.extra_css %}
+        <link rel="stylesheet" href="{{ css_file }}">
+    {% endfor %}
+{% endif %}
 
 		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="{{ site.reveal_path }}lib/css/zenburn.css">
