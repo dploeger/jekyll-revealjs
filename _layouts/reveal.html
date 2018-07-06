@@ -23,7 +23,12 @@
 {% endif %}
 
 		<!-- For syntax highlighting -->
-		<link rel="stylesheet" href="{{ site.reveal_path }}lib/css/zenburn.css">
+        {% if site.highlight_style_sheet %}
+            {% assign highlight_style_sheet = site.highlight_style_sheet %}
+        {% else %}
+            {% capture highlight_style_sheet %}{{ site.reveal_path }}lib/css/zenburn.css {% endcapture %}
+        {% endif %}
+        <link rel="stylesheet" href="{{ highlight_style_sheet }}">
 
 		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
 		<script>

@@ -13,6 +13,9 @@ reveal_theme_path: reveal.js/css/theme/
 # Additional custom CSS paths
 extra_css: 
 
+# Custom CSS for highlighting (defaults to reveal.js/lib/css/zenburn.css)
+highlight_style_sheet: 
+
 # Embed Server-side speaker notes?
 reveal_notes_server: false
 
