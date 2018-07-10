@@ -68,10 +68,15 @@
 				transition: '{{ site.reveal_transition }}', // default/cube/page/concave/zoom/linear/fade/none
 
                 {% if site.reveal_options %}
-                    {% for option in site.reveal_options %}
-                        {{ option[0] }}: "{{ option[1] }}",
-                    {% endfor %}
-
+                    {% if site.reveal_options.first.first %}
+                        // Reveal options generated from mapping
+                        {% for option in site.reveal_options %}
+                            {{ option[0] }}: "{{ option[1] }}",
+                        {% endfor %}
+                    {% else %}
+                        // Reveal options generated from a list of strings
+                        {{ site.reveal_options | append:',' }}
+                    {% endif %}
                 {% endif %}
 
 				// Optional libraries used to extend on reveal.js
