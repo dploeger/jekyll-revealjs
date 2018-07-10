@@ -62,6 +62,7 @@ You can configure almost any reveal.js setting using the _config.yml-settings fi
 You can also further customize the presentation:
 
 * extra_css: Additional CSS files added after the reveal theme []
+* highlight_style_sheet: CSS theme for highlight.js [reveal.js/lib/css/zenburn.css]
 
 ## Custom reveal.js-themes
 
