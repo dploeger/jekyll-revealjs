@@ -56,6 +56,7 @@ You can configure almost any reveal.js setting using the _config.yml-settings fi
 * reveal_theme_path: The path to the reveal.js-theme (can be changed for custom themes) [reveal.js/css/theme/]
 * reveal_notes_server: Wether to support the speaker notes server [false (only local speaker notes)]
 * reveal_options: Additional reveal.js [options][]
+
 * reveal_dependencies: Additional reveal.js [dependencies][]
 * reveal_path: Path to the reveal.js-installation [reveal.js]
 
@@ -63,6 +64,39 @@ You can also further customize the presentation:
 
 * extra_css: Additional CSS files added after the reveal theme []
 * highlight_style_sheet: CSS theme for highlight.js [reveal.js/lib/css/zenburn.css]
+
+### Specifying reveal options and dependencies
+
+`reveal_options` can be either a list of strings specifying the Javascript options, e.g.:
+
+```yaml
+reveal_options:
+    - 'width: "960px"'
+    - 'height: "720px"'
+```
+
+or, as a convenience, it can be a mapping of options to their values:
+
+```yaml
+reveal_options:
+    width: 960px
+    height: 720px
+```
+
+Note that if a mapping is passed, the values will be inserted into the
+final javascript as quoted strings. If this is unacceptable (for example,
+if you want to pass a boolean parameter that takes `true` or `false`),
+specify a list of strings.
+
+`reveal_dependencies` takes a list of strings representing the javascript
+to specify a dependency [as you would in reveal.js](https://github.com/hakimel/reveal.js/#dependencies),
+for example:
+
+```yaml
+reveal_dependencies:
+    # Speaker notes
+    - "{ src: 'path/to/plugin.js', async: true },"
+```
 
 ## Custom reveal.js-themes
 
