@@ -8,7 +8,7 @@ reveal_theme: black.css
 reveal_transition: default
 
 # Path to the used theme (defaults to the Reveal.js standard theme path)
-reveal_theme_path: reveal.js/css/theme/ 
+reveal_theme_path: assets/reveal.js/css/theme/ 
 
 # Additional custom CSS paths
 extra_css: 
@@ -26,7 +26,7 @@ reveal_options:
 reveal_dependencies: 
 
 # Reveal.js subdirectory
-reveal_path: reveal.js/
+reveal_path: assets/reveal.js/
 
 # Don't change anything below
 markdown: redcarpet
