@@ -2,5 +2,6 @@
 
 It's also possible to do fragments.
 
-- Like {% include fragment.html %}
-- This {% include fragment.html %}
+- You can use &lt;fragment/&gt; to step your list items
+- like <fragment/>
+- this <fragment/>
