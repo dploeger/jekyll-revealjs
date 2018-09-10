@@ -142,23 +142,23 @@ To use vertical slides, do the same, but use two dashes:
 Fragments allow slide elements to come one by one. This is often used in lists to subsequently show
 fragments of a list during a presentation.
 
-To use fragments, jekyll-reveal.js includes a jekyll-plugin, that simplifies the use of fragments
-in markdown. To specify the current element as a fragment, use the {% fragment %}-tag like this:
+Jekyll-reveal.js simplifies the reveal.js syntax. To specify the current element as a fragment, use `<fragment/>` like 
+this:
 
     # Slide
     
-    * This {% fragment %}
-    * will {% fragment %}
-    * come one by one {% fragment %}
+    * This <fragment/>
+    * will <fragment/>
+    * come one by one <fragment/>
 
 ### Slide backgrounds
 
-To modify the background of the current slide, jekyll-reveal.js also includes a simplification
-plugin:
+To modify the background of the current slide, jekyll-reveal.js simplifies the syntax to 
+`<background>color</background>`:
 
     # Slide
     
-    {% background white %}
+    <background>white</background>
     
     This slide has a white background
 
