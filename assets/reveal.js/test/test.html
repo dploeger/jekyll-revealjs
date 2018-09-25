@@ -7,7 +7,7 @@
 		<title>reveal.js - Tests</title>
 
 		<link rel="stylesheet" href="../css/reveal.css">
-		<link rel="stylesheet" href="qunit-1.12.0.css">
+		<link rel="stylesheet" href="qunit-2.5.0.css">
 	</head>
 
 	<body style="overflow: auto;">
@@ -22,10 +22,13 @@
 				<section data-background-image="examples/assets/image1.png">
 					<h1>1</h1>
 					<img data-src="fake-url.png">
+					<video data-src="fake-url.mp4"></video>
+					<audio data-src="fake-url.mp3"></audio>
+					<aside class="notes">speaker notes 1</aside>
 				</section>
 
 				<section>
-					<section data-background="examples/assets/image2.png">
+					<section data-background="examples/assets/image2.png" data-notes="speaker notes 2">
 						<h1>2.1</h1>
 					</section>
 					<section>
@@ -52,6 +55,7 @@
 							<li class="fragment" data-fragment-index="0">4.1</li>
 							<li class="fragment" data-fragment-index="0">4.2</li>
 						</ul>
+						<iframe data-src="http://example.com"></iframe>
 					</section>
 
 					<section>
@@ -74,7 +78,7 @@
 
 		<script src="../lib/js/head.min.js"></script>
 		<script src="../js/reveal.js"></script>
-		<script src="qunit-1.12.0.js"></script>
+		<script src="qunit-2.5.0.js"></script>
 
 		<script src="test.js"></script>
 
