@@ -4,8 +4,7 @@ A Jekyll-based framework for creating presentations based on Reveal.js and markd
 
 ## Introduction
 
-If you like [Reveal.js][] for creating your online presentations, like the site
-management [Jekyll][] gives you and like [Markdown][] because of its easy and clean look, here's an easy way to create a presentation using Jekyll, Markdown and Reveal.js.
+If you like [Reveal.js][] for creating your online presentations, like the site management [Jekyll][] gives you and like [Markdown][] because of its easy and clean look, here's an easy way to create a presentation using Jekyll, Markdown and Reveal.js.
 
 See the [example presentation][] created using the contents in this repository and `jekyll build`.
 
@@ -50,20 +49,20 @@ Jekyll will assume, that each post has been made on the first of january, 2001 (
 
 You can configure almost any reveal.js setting using the `_config.yml` settings file in the root directory.
 
-* `title`: The title of your presentation (displayed in the browser's title bar)
-* `reveal_theme`: The reveal.js-theme to use [default.css]
-* `reveal_transition`: The reveal.js-transition to use [default]
-* `reveal_theme_path`: The path to the reveal.js-theme (can be changed for custom themes) [reveal.js/css/theme/]
-* `reveal_notes_server`: Wether to support the speaker notes server [false (only local speaker notes)]
-* `reveal_options`: Additional reveal.js [options][]
+- `title`: The title of your presentation (displayed in the browser's title bar)
+- `reveal_theme`: The reveal.js-theme to use [default.css]
+- `reveal_transition`: The reveal.js-transition to use [default]
+- `reveal_theme_path`: The path to the reveal.js-theme (can be changed for custom themes) [reveal.js/css/theme/]
+- `reveal_notes_server`: Wether to support the speaker notes server [false (only local speaker notes)]
+- `reveal_options`: Additional reveal.js [options][]
 
-* `reveal_dependencies`: Additional reveal.js [dependencies][]
-* `reveal_path`: Path to the reveal.js-installation [reveal.js]
+- `reveal_dependencies`: Additional reveal.js [dependencies][]
+- `reveal_path`: Path to the reveal.js-installation [reveal.js]
 
 You can also further customize the presentation:
 
-* `extra_css`: Additional CSS files added after the reveal theme []
-* `highlight_style_sheet`: CSS theme for highlight.js [reveal.js/lib/css/zenburn.css]
+- `extra_css`: Additional CSS files added after the reveal theme []
+- `highlight_style_sheet`: CSS theme for highlight.js [reveal.js/lib/css/zenburn.css]
 
 ### Specifying reveal options and dependencies
 
@@ -71,45 +70,37 @@ You can also further customize the presentation:
 
 ```yaml
 reveal_options:
-    - 'width: "960px"'
-    - 'height: "720px"'
+  - 'width: "960px"'
+  - 'height: "720px"'
 ```
 
 or, as a convenience, it can be a mapping of options to their values:
 
 ```yaml
 reveal_options:
-    width: 960px
-    height: 720px
+  width: 960px
+  height: 720px
 ```
 
-Note that if a mapping is passed, the values will be inserted into the
-final javascript as quoted strings. If this is unacceptable (for example,
-if you want to pass a boolean parameter that takes `true` or `false`),
-specify a list of strings.
+Note that if a mapping is passed, the values will be inserted into the final javascript as quoted strings. If this is unacceptable (for example, if you want to pass a boolean parameter that takes `true` or `false`), specify a list of strings.
 
-`reveal_dependencies` takes a list of strings representing the javascript
-to specify a dependency [as you would in reveal.js](https://github.com/hakimel/reveal.js/#dependencies),
-for example:
+`reveal_dependencies` takes a list of strings representing the javascript to specify a dependency [as you would in reveal.js](https://github.com/hakimel/reveal.js/#dependencies), for example:
 
 ```yaml
 reveal_dependencies:
-    # Speaker notes
-    - "{ src: 'path/to/plugin.js', async: true },"
+  # Speaker notes
+  - "{ src: 'path/to/plugin.js', async: true },"
 ```
 
 ## Custom reveal.js-themes
 
-If you want to use your custom reveal.js-theme, we recommend adding a directory `theme`, putting the file(s)
-there and referencing that directory in the configuration `reveal_theme_path`.
+If you want to use your custom reveal.js-theme, we recommend adding a directory `theme`, putting the file(s) there and referencing that directory in the configuration `reveal_theme_path`.
 
-Don't mess with the `reveal.js` subdirectory as it is a subrepository and doesn't adhere to your repository's
-branches.
+Don't mess with the `reveal.js` subdirectory as it is a subrepository and doesn't adhere to your repository's branches.
 
 ## Markdown extensions and simplification
 
-Reveal.js already includes a markdown interpreter, which we use for jekyll-reveal.js. We have already
-configured it and included some simplification just for you!
+Reveal.js already includes a markdown interpreter, which we use for jekyll-reveal.js. We have already configured it and included some simplification just for you!
 
 ### Multiple slides
 
@@ -143,24 +134,21 @@ And this is a vertical slide below Slide 1
 
 ### Fragments
 
-Fragments allow slide elements to come one by one. This is often used in lists to subsequently show
-fragments of a list during a presentation.
+Fragments allow slide elements to come one by one. This is often used in lists to subsequently show fragments of a list during a presentation.
 
-Jekyll-reveal.js simplifies the reveal.js syntax. To specify the current element as a fragment, use `<fragment/>` like 
-this:
+Jekyll-reveal.js simplifies the reveal.js syntax. To specify the current element as a fragment, use `<fragment/>` like this:
 
 ```markdown
 # Slide
 
-* This <fragment/>
-* will <fragment/>
-* come one by one <fragment/>
+- This <fragment/>
+- will <fragment/>
+- come one by one <fragment/>
 ```
 
 ### Slide backgrounds
 
-To modify the background of the current slide, jekyll-reveal.js simplifies the syntax to 
-`<background>color</background>`:
+To modify the background of the current slide, jekyll-reveal.js simplifies the syntax to `<background>color</background>`:
 
 ```markdown
 # Slide
@@ -184,11 +172,10 @@ Note:
 This is only displayed in the speaker notes.
 ```
 
-[Reveal.js]:      http://lab.hakim.se/reveal-js/#/
-[Jekyll]:         http://jekyllrb.com/
-[Markdown]:       http://daringfireball.net/projects/markdown/ 
+[reveal.js]: http://lab.hakim.se/reveal-js/#/
+[jekyll]: http://jekyllrb.com/
+[markdown]: http://daringfireball.net/projects/markdown/
 [example presentation]: http://dploeger.github.io/jekyll-revealjs/example
-[install Jekyll]: http://jekyllrb.com/docs/installation/  
+[install jekyll]: http://jekyllrb.com/docs/installation/
 [options]: https://github.com/hakimel/reveal.js#configuration
 [depedencies]: https://github.com/hakimel/reveal.js#dependencies
-
