@@ -191,5 +191,5 @@ This is only displayed in the speaker notes.
 [example presentation]: http://dploeger.github.io/jekyll-revealjs/example
 [install jekyll]: http://jekyllrb.com/docs/installation/
 [options]: https://github.com/hakimel/reveal.js#configuration
-[depedencies]: https://github.com/hakimel/reveal.js#dependencies
+[dependencies]: https://github.com/hakimel/reveal.js#dependencies
 [posts]: https://jekyllrb.com/docs/posts/#creating-posts
