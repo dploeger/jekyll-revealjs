@@ -20,7 +20,7 @@ Clean the Example presentation:
     git rm _posts/*
     mkdir _posts
 
-After that, add your slides into the `_posts` subdirectory in clean Markdown syntax and you're ready to go with building your presentation with Jekyll:
+After that, add your slides into the `_posts` subdirectory in clean Markdown syntax and you're ready to build your presentation with Jekyll:
 
     jekyll build
 
@@ -32,7 +32,7 @@ You can even manage multiple presentations using the power of Git. Simply branch
 
 ## Slide filenames
 
-Because we're using the Jekyll posts-framework to easily gather the slides for the presentation, we're bound to the conventions of Jekyll posts, namely being
+Because we're using Jekyll [posts][] to easily gather the slides for the presentation, we use their filename conventions with the following syntax:
 
     <year>-<month>-<day>-<title>.md
 
@@ -43,7 +43,7 @@ We recommend naming the files like
 
 and so forth.
 
-Jekyll will assume, that each post has been made on the first of january, 2001 (which is of no interest for a presentation). The additional number is for sorting purposes. After that comes a title to identify the specific slide (which is actually only for the presentation author, Jekyll doesn't care about it).
+Jekyll will assume that each post has been made on the first of January, 2001 (which is of no interest for a presentation). The additional number is for sorting purposes. After that comes a title to identify the specific slide (which is actually only for the presentation author, Jekyll doesn't care about it).
 
 ## Configuring the presentation
 
@@ -82,7 +82,7 @@ reveal_options:
   height: 720px
 ```
 
-Note that if a mapping is passed, the values will be inserted into the final JavaScript as quoted strings. If this is unacceptable (for example, if you want to pass a boolean parameter that takes `true` or `false`), specify a list of strings.
+Note that if a mapping is passed, the values will be inserted into the final JavaScript as quoted strings. If this is unacceptable (for example, if you want to pass a Boolean parameter that takes `true` or `false`), specify a list of strings.
 
 `reveal_dependencies` takes a list of strings representing the JavaScript to specify a dependency [as you would in reveal.js](https://github.com/hakimel/reveal.js/#dependencies), for example:
 
@@ -92,15 +92,15 @@ reveal_dependencies:
   - "{ src: 'path/to/plugin.js', async: true },"
 ```
 
-## Custom reveal.js-themes
+## Custom reveal.js themes
 
-If you want to use your custom reveal.js-theme, we recommend adding a directory `theme`, putting the file(s) there and referencing that directory in the configuration `reveal_theme_path`.
+If you want to use your custom reveal.js theme, we recommend adding a directory `theme`, putting the file(s) there and referencing that directory in the configuration `reveal_theme_path`.
 
-Don't mess with the `reveal.js` subdirectory as it is a subrepository and doesn't adhere to your repository's branches.
+Don't mess with the `reveal.js` subdirectory as it is a submodule and doesn't adhere to your repository's branches.
 
 ## Markdown extensions and simplification
 
-Reveal.js already includes a Markdown interpreter, which we use for jekyll-reveal.js. We have already configured it and included some simplification just for you!
+Reveal.js already includes a Markdown interpreter, which we use for **jekyll-reveal.js**. We have already configured it and included some simplification just for you!
 
 ### Multiple slides
 
@@ -136,7 +136,7 @@ And this is a vertical slide below Slide 1
 
 Fragments allow slide elements to come one by one. This is often used in lists to subsequently show fragments of a list during a presentation.
 
-Jekyll-reveal.js simplifies the reveal.js syntax. To specify the current element as a fragment, use `<fragment/>` like this:
+**jekyll-reveal.js** simplifies the reveal.js syntax. To specify the current element as a fragment, use `<fragment/>` like this:
 
 ```markdown
 # Slide
@@ -148,7 +148,7 @@ Jekyll-reveal.js simplifies the reveal.js syntax. To specify the current element
 
 ### Slide backgrounds
 
-To modify the background of the current slide, jekyll-reveal.js simplifies the syntax to `<background>color</background>`:
+To modify the background of the current slide, **jekyll-reveal.js** simplifies the syntax to `<background>color</background>`:
 
 ```markdown
 # Slide
@@ -160,7 +160,7 @@ This slide has a white background
 
 ### Speaker notes
 
-jekyll-reveal.js is configured, so that speaker notes are identified after an introductory "Note:"-tag:
+To include speaker notes, add `Note:` on a separate line and write your notes below:
 
 ```markdown
 # Slide
@@ -179,3 +179,4 @@ This is only displayed in the speaker notes.
 [install jekyll]: http://jekyllrb.com/docs/installation/
 [options]: https://github.com/hakimel/reveal.js#configuration
 [depedencies]: https://github.com/hakimel/reveal.js#dependencies
+[posts]: https://jekyllrb.com/docs/posts/#creating-posts
