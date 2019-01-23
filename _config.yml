@@ -28,6 +28,12 @@ reveal_dependencies:
 # Reveal.js subdirectory
 reveal_path: reveal.js/
 
+# Exclude directories and/or files from the conversion
+exclude:
+  - Gemfile*
+  - LICENSE
+  - README.md
+
 # Don't change anything below
 markdown: redcarpet
 highlighter: rouge
