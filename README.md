@@ -7,7 +7,7 @@ A Jekyll-based framework for creating presentations based on Reveal.js and markd
 If you like [Reveal.js][] for creating your online presentations, like the site
 management [Jekyll][] gives you and like [Markdown][] because of its easy and clean look, here's an easy way to create a presentation using Jekyll, Markdown and Reveal.js.
 
-See the [example presentation][] created using the contents in this repository and "jekyll build".
+See the [example presentation][] created using the contents in this repository and `jekyll build`.
 
 ## Howto
 
@@ -21,7 +21,7 @@ Clean the Example presentation:
     git rm _posts/*
     mkdir _posts
 
-After that, add your slides into the _posts-subdirectory in clean Markdown syntax and you're ready to go with building your presentation with Jekyll:
+After that, add your slides into the `_posts` subdirectory in clean Markdown syntax and you're ready to go with building your presentation with Jekyll:
 
     jekyll build
 
@@ -48,22 +48,22 @@ Jekyll will assume, that each post has been made on the first of january, 2001 (
 
 ## Configuring the presentation
 
-You can configure almost any reveal.js setting using the _config.yml-settings file in the root directory.
+You can configure almost any reveal.js setting using the `_config.yml` settings file in the root directory.
 
-* title: The title of your presentation (displayed in the browser's title bar)
-* reveal_theme: The reveal.js-theme to use [default.css]
-* reveal_transition: The reveal.js-transition to use [default]
-* reveal_theme_path: The path to the reveal.js-theme (can be changed for custom themes) [reveal.js/css/theme/]
-* reveal_notes_server: Wether to support the speaker notes server [false (only local speaker notes)]
-* reveal_options: Additional reveal.js [options][]
+* `title`: The title of your presentation (displayed in the browser's title bar)
+* `reveal_theme`: The reveal.js-theme to use [default.css]
+* `reveal_transition`: The reveal.js-transition to use [default]
+* `reveal_theme_path`: The path to the reveal.js-theme (can be changed for custom themes) [reveal.js/css/theme/]
+* `reveal_notes_server`: Wether to support the speaker notes server [false (only local speaker notes)]
+* `reveal_options`: Additional reveal.js [options][]
 
-* reveal_dependencies: Additional reveal.js [dependencies][]
-* reveal_path: Path to the reveal.js-installation [reveal.js]
+* `reveal_dependencies`: Additional reveal.js [dependencies][]
+* `reveal_path`: Path to the reveal.js-installation [reveal.js]
 
 You can also further customize the presentation:
 
-* extra_css: Additional CSS files added after the reveal theme []
-* highlight_style_sheet: CSS theme for highlight.js [reveal.js/lib/css/zenburn.css]
+* `extra_css`: Additional CSS files added after the reveal theme []
+* `highlight_style_sheet`: CSS theme for highlight.js [reveal.js/lib/css/zenburn.css]
 
 ### Specifying reveal options and dependencies
 
@@ -100,10 +100,10 @@ reveal_dependencies:
 
 ## Custom reveal.js-themes
 
-If you want to use your custom reveal.js-theme, we recommend adding a directory "theme", putting the file(s)
-there and referencing that directory in the configuration "reveal_theme_path".
+If you want to use your custom reveal.js-theme, we recommend adding a directory `theme`, putting the file(s)
+there and referencing that directory in the configuration `reveal_theme_path`.
 
-Don't mess with the reveal.js subdirectory as it is a subrepository and doesn't adhere to your repository's
+Don't mess with the `reveal.js` subdirectory as it is a subrepository and doesn't adhere to your repository's
 branches.
 
 ## Markdown extensions and simplification
