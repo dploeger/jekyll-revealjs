@@ -115,27 +115,31 @@ configured it and included some simplification just for you!
 
 To use multiple slides in one slide file, use a newline, three dashes and another newline like this:
 
-    # Slide 1
-    
-    This is the content of Slide 1
-    
-    ---
-    
-    # Slide 2
-    
-    This is the content of Slide 2
+```markdown
+# Slide 1
+
+This is the content of Slide 1
+
+---
+
+# Slide 2
+
+This is the content of Slide 2
+```
 
 ### Vertical slides
 
 To use vertical slides, do the same, but use two dashes:
 
-    # Slide 1
-    
-    This is the content of Slide 1
-    
-    --
-    
-    And this is a vertical slide below Slide 1
+```markdown
+# Slide 1
+
+This is the content of Slide 1
+
+--
+
+And this is a vertical slide below Slide 1
+```
 
 ### Fragments
 
@@ -145,34 +149,40 @@ fragments of a list during a presentation.
 Jekyll-reveal.js simplifies the reveal.js syntax. To specify the current element as a fragment, use `<fragment/>` like 
 this:
 
-    # Slide
-    
-    * This <fragment/>
-    * will <fragment/>
-    * come one by one <fragment/>
+```markdown
+# Slide
+
+* This <fragment/>
+* will <fragment/>
+* come one by one <fragment/>
+```
 
 ### Slide backgrounds
 
 To modify the background of the current slide, jekyll-reveal.js simplifies the syntax to 
 `<background>color</background>`:
 
-    # Slide
-    
-    <background>white</background>
-    
-    This slide has a white background
+```markdown
+# Slide
+
+<background>white</background>
+
+This slide has a white background
+```
 
 ### Speaker notes
 
 jekyll-reveal.js is configured, so that speaker notes are identified after an introductory "Note:"-tag:
 
-    # Slide
+```markdown
+# Slide
 
-    Some slide content
+Some slide content
 
-    Note:
+Note:
 
-    This is only displayed in the speaker notes.
+This is only displayed in the speaker notes.
+```
 
 [Reveal.js]:      http://lab.hakim.se/reveal-js/#/
 [Jekyll]:         http://jekyllrb.com/
