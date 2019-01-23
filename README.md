@@ -1,6 +1,6 @@
 # jekyll-reveal.js
 
-A Jekyll-based framework for creating presentations based on Reveal.js and markdown.
+A Jekyll-based framework for creating presentations based on Reveal.js and Markdown.
 
 ## Introduction
 
@@ -24,7 +24,7 @@ After that, add your slides into the `_posts` subdirectory in clean Markdown syn
 
     jekyll build
 
-You can even manage multiple presentations using the power of git. Simply branch from the master branch to create a new presentation:
+You can even manage multiple presentations using the power of Git. Simply branch from the master branch to create a new presentation:
 
     git checkout master
     git branch presentation2
@@ -66,7 +66,7 @@ You can also further customize the presentation:
 
 ### Specifying reveal options and dependencies
 
-`reveal_options` can be either a list of strings specifying the Javascript options, e.g.:
+`reveal_options` can be either a list of strings specifying the JavaScript options, e.g.:
 
 ```yaml
 reveal_options:
@@ -82,9 +82,9 @@ reveal_options:
   height: 720px
 ```
 
-Note that if a mapping is passed, the values will be inserted into the final javascript as quoted strings. If this is unacceptable (for example, if you want to pass a boolean parameter that takes `true` or `false`), specify a list of strings.
+Note that if a mapping is passed, the values will be inserted into the final JavaScript as quoted strings. If this is unacceptable (for example, if you want to pass a boolean parameter that takes `true` or `false`), specify a list of strings.
 
-`reveal_dependencies` takes a list of strings representing the javascript to specify a dependency [as you would in reveal.js](https://github.com/hakimel/reveal.js/#dependencies), for example:
+`reveal_dependencies` takes a list of strings representing the JavaScript to specify a dependency [as you would in reveal.js](https://github.com/hakimel/reveal.js/#dependencies), for example:
 
 ```yaml
 reveal_dependencies:
@@ -100,7 +100,7 @@ Don't mess with the `reveal.js` subdirectory as it is a subrepository and doesn'
 
 ## Markdown extensions and simplification
 
-Reveal.js already includes a markdown interpreter, which we use for jekyll-reveal.js. We have already configured it and included some simplification just for you!
+Reveal.js already includes a Markdown interpreter, which we use for jekyll-reveal.js. We have already configured it and included some simplification just for you!
 
 ### Multiple slides
 
