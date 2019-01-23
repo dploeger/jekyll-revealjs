@@ -2,6 +2,19 @@
 
 A Jekyll-based framework for creating presentations based on Reveal.js and Markdown.
 
+- [Introduction](#introduction)
+- [Howto](#howto)
+- [Slide filenames](#slide-filenames)
+- [Configuring the presentation](#configuring-the-presentation)
+  - [Specifying reveal options and dependencies](#specifying-reveal-options-and-dependencies)
+- [Custom reveal.js themes](#custom-revealjs-themes)
+- [Markdown extensions and simplification](#markdown-extensions-and-simplification)
+  - [Multiple slides](#multiple-slides)
+  - [Vertical slides](#vertical-slides)
+  - [Fragments](#fragments)
+  - [Slide backgrounds](#slide-backgrounds)
+  - [Speaker notes](#speaker-notes)
+
 ## Introduction
 
 If you like [Reveal.js][] for creating your online presentations, like the site management [Jekyll][] gives you and like [Markdown][] because of its easy and clean look, here's an easy way to create a presentation using Jekyll, Markdown and Reveal.js.
