@@ -66,7 +66,7 @@ You can configure almost any reveal.js setting using the `_config.yml` settings 
 - `reveal_theme`: The reveal.js-theme to use [default.css]
 - `reveal_transition`: The reveal.js-transition to use [default]
 - `reveal_theme_path`: The path to the reveal.js-theme (can be changed for custom themes) [reveal.js/css/theme/]
-- `reveal_notes_server`: Wether to support the speaker notes server [false (only local speaker notes)]
+- `reveal_notes_server`: Whether to support the speaker notes server [false (only local speaker notes)]
 - `reveal_options`: Additional reveal.js [options][]
 
 - `reveal_dependencies`: Additional reveal.js [dependencies][]
