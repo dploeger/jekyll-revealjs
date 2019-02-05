@@ -66,7 +66,9 @@ Jekyll will assume that each post has been made on the first of January, 2001 (w
 
 You can configure almost any reveal.js setting using the `_config.yml` settings file in the root directory.
 
-- `title`: The title of your presentation (displayed in the browser's title bar)
+- `title`: The title of your presentation (displayed in the browser's title bar, optional and defaults to your repository’s name thanks to the `jekyll-github-metadata` plugin)
+- `description`: A description for your presentation (displayed in the HTML head, optional and defaults to your repository’s description thanks to the `jekyll-github-metadata` plugin)
+- `author`: Your name (displayed in the HTML head)
 - `reveal_theme`: The reveal.js-theme to use [default.css]
 - `reveal_transition`: The reveal.js-transition to use [default]
 - `reveal_theme_path`: The path to the reveal.js-theme (can be changed for custom themes) [reveal.js/css/theme/]
