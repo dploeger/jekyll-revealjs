@@ -35,7 +35,7 @@ exclude:
   - README.md
 
 # Don't change anything below
-markdown: redcarpet
+markdown: kramdown
 highlighter: rouge
 markdown_ext: ignoreme
 
