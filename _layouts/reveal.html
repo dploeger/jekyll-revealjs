@@ -48,7 +48,7 @@
 				{% for post in site.posts reversed %}
 				<section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$" data-notes="^Note:">
 					<script type="text/template">
-						{{ post.content | replace:'<fragment/>','<!-- .element: class="fragment" -->' | replace:'<background>','<!-- .slide: data-background="' | replace:'<background/>','" -->' }}
+						{{ post.content | replace:'<fragment/>','<!-- .element: class="fragment" -->' | replace:'<background>','<!-- .slide: data-background="' | replace:'</background>','" -->' }}
 					</script>
 				</section>
 				{% endfor %}

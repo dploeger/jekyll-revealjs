@@ -1,7 +1,7 @@
 # Backgrounds
 
-<background>green<background/> 
+<background>green</background> 
 
 Or use different backgrounds.
 
-&lt;background&gt;green&lt;background/&gt;
+&lt;background&gt;green&lt;/background&gt;
