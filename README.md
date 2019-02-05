@@ -159,6 +159,16 @@ Fragments allow slide elements to come one by one. This is often used in lists t
 - come one by one <fragment/>
 ```
 
+Or, if you find it cleaner, like this:
+
+```markdown
+# Slide
+
+-[+] This
+-[+] will
+-[+] come one by one
+```
+
 ### Slide backgrounds
 
 To modify the background of the current slide, **jekyll-reveal.js** simplifies the syntax to `<background>color</background>`:
