@@ -19,7 +19,7 @@ A Jekyll-based framework for creating presentations based on Reveal.js and Markd
 
 If you like [Reveal.js][] for creating your online presentations, like the site management [Jekyll][] gives you and like [Markdown][] because of its easy and clean look, here's an easy way to create a presentation using Jekyll, Markdown and Reveal.js.
 
-See the [example presentation][] created using the contents in this repository and `jekyll build`.
+See the [example presentation][] created using the contents in this repository and `jekyll build` or `docker-compose up`.
 
 ## Howto
 
@@ -36,6 +36,10 @@ Clean the Example presentation:
 After that, add your slides into the `_posts` subdirectory in clean Markdown syntax and you're ready to build your presentation with Jekyll:
 
     jekyll build
+
+If you don’t have Jekyll installed (but you do have Docker) then you can just run the following to build and serve your changes using a container. Hit `ctrl-c` to stop the process.
+
+     docker-compose up
 
 You can even manage multiple presentations using the power of Git. Simply branch from the master branch to create a new presentation:
 
