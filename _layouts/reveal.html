@@ -4,11 +4,11 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>{{ site.title }}</title>
+		{% if site.title %}<title>{{ site.title }}</title>{% endif %}
 
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
-<meta name="apple-mobile-web-app-capable" content="yes" />
+		{% if site.description %}<meta name="description" content="{{ site.description }}">{% endif %}
+		{% if site.author %}<meta name="author" content="{{ site.author }}">{% endif %}
+		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -16,18 +16,18 @@
 		<link rel="stylesheet" href="{{ site.reveal_path }}css/reveal.css">
 		<link rel="stylesheet" href="{{ site.reveal_theme_path }}{{ site.reveal_theme }}" id="theme">
 {% if site.extra_css %}
-    {% for css_file in site.extra_css %}
-        <link rel="stylesheet" href="{{ css_file }}">
-    {% endfor %}
+	{% for css_file in site.extra_css %}
+		<link rel="stylesheet" href="{{ css_file }}">
+	{% endfor %}
 {% endif %}
 
 		<!-- For syntax highlighting -->
-        {% if site.highlight_style_sheet %}
-            {% assign highlight_style_sheet = site.highlight_style_sheet %}
-        {% else %}
-            {% capture highlight_style_sheet %}{{ site.reveal_path }}lib/css/zenburn.css {% endcapture %}
-        {% endif %}
-        <link rel="stylesheet" href="{{ highlight_style_sheet }}">
+		{% if site.highlight_style_sheet %}
+			{% assign highlight_style_sheet = site.highlight_style_sheet %}
+		{% else %}
+			{% capture highlight_style_sheet %}{{ site.reveal_path }}lib/css/zenburn.css {% endcapture %}
+		{% endif %}
+		<link rel="stylesheet" href="{{ highlight_style_sheet }}">
 
 		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
 		<script>
@@ -43,7 +43,7 @@
 
 		<div class="reveal">
 
-            <div class="slides">
+			<div class="slides">
 
 				{% for post in site.posts reversed %}
 				<section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$" data-notes="^Note:">
@@ -53,7 +53,7 @@
 				</section>
 				{% endfor %}
 
-            </div>
+			</div>
 
 		</div>
 
@@ -73,17 +73,17 @@
 				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
 				transition: '{{ site.reveal_transition }}', // default/cube/page/concave/zoom/linear/fade/none
 
-                {% if site.reveal_options %}
-                    {% if site.reveal_options.first.first %}
-                        // Reveal options generated from mapping
-                        {% for option in site.reveal_options %}
-                            {{ option[0] }}: "{{ option[1] }}",
-                        {% endfor %}
-                    {% else %}
-                        // Reveal options generated from a list of strings
-                        {{ site.reveal_options | append:',' }}
-                    {% endif %}
-                {% endif %}
+				{% if site.reveal_options %}
+					{% if site.reveal_options.first.first %}
+						// Reveal options generated from mapping
+						{% for option in site.reveal_options %}
+							{{ option[0] }}: "{{ option[1] }}",
+						{% endfor %}
+					{% else %}
+						// Reveal options generated from a list of strings
+						{{ site.reveal_options | append:',' }}
+					{% endif %}
+				{% endif %}
 
 				// Optional libraries used to extend on reveal.js
 				dependencies: [
@@ -92,15 +92,15 @@
 					{ src: '{{ site.reveal_path }}plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: '{{ site.reveal_path }}plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
 					{ src: '{{ site.reveal_path }}plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-                    {% if site.reveal_notes_server %}
-                    { src: '{{ site.reveal_path }}socket.io/socket.io.js', async: true },
-                    { src: '{{ site.reveal_path }}plugin/notes-server/client.js', async: true }
-                    {% else %}
+					{% if site.reveal_notes_server %}
+					{ src: '{{ site.reveal_path }}socket.io/socket.io.js', async: true },
+					{ src: '{{ site.reveal_path }}plugin/notes-server/client.js', async: true }
+					{% else %}
 					{ src: '{{ site.reveal_path }}plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
-                    {% endif %}
-                    {% if site.reveal_dependencies %}
-                    , {{ site.reveal_dependencies }}
-                    {% endif %}
+					{% endif %}
+					{% if site.reveal_dependencies %}
+					, {{ site.reveal_dependencies }}
+					{% endif %}
 				]
 			});
 

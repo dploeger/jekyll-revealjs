@@ -1,0 +1,8 @@
+version: "3"
+services:
+    github-pages:
+        volumes:
+            - '$PWD:/usr/src/app/'
+        ports:
+            - '4000:4000'
+        image: starefossen/github-pages
