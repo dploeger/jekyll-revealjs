@@ -1,5 +1,10 @@
 # Your presentation title
-title: Jekyll and Reveal.js
+
+# Your presentation description (optional)
+description: A framework for easily creating beautiful presentations using HTML
+
+# Your name (optional)
+author: jekyll-revealjs contributors
 
 # The Reveal theme
 reveal_theme: black.css
