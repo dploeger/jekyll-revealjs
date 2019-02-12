@@ -6,7 +6,7 @@
 You can also set image backgrounds.
 
 &lt;backgroundimage&gt;
-&#123;&#123;site.github.url&#125;&#125;/images/image.jpg
+&#123;&#123; '/images/image.jpg' | relative_url &#125;&#125;/
 &lt;/backgroundimage&gt;
 &lt;backgroundimageopacity&gt;0.25&lt;/backgroundimageopacity&gt;
 
