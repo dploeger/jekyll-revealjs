@@ -8,7 +8,7 @@ reveal_theme: at.css
 reveal_transition: default
 
 # Path to the used theme (defaults to the Reveal.js standard theme path)
-reveal_theme_path: /css/
+reveal_theme_path: assets/
 
 # Additional custom CSS paths
 extra_css: 
