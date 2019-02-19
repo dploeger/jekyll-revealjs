@@ -57,6 +57,10 @@
 								| replace:'<fragment/>','<!-- .element: class="fragment" -->'
 								| replace:'<background>','<!-- .slide: data-background="'
 								| replace:'</background>','" -->'
+								| replace:'<backgroundimage>','<!-- .slide: data-background="'
+								| replace:'</backgroundimage>','" --> '
+								| replace:'<backgroundimageopacity>','<!-- .slide: data-background-opacity="'
+								| replace:'</backgroundimageopacity>','" -->'
 %}{%
 							assign first_char = line
 								| slice: 0,1
