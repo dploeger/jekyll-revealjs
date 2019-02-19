@@ -48,7 +48,30 @@
 				{% for post in site.posts reversed %}
 				<section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$" data-notes="^Note:">
 					<script type="text/template">
-						{{ post.content | replace:'<fragment/>','<!-- .element: class="fragment" -->' | replace:'<background>','<!-- .slide: data-background="' | replace:'</background>','" -->' | replace:'-[+]','- <!-- .element: class="fragment" -->' }}
+{%
+						assign lines = post.content | newline_to_br | strip_newlines | split: "<br />"
+%}{%
+						for line in lines
+%}{% 
+							assign processed_line = line
+								| replace:'<fragment/>','<!-- .element: class="fragment" -->'
+								| replace:'<background>','<!-- .slide: data-background="'
+								| replace:'</background>','" -->'
+%}{%
+							assign first_char = line
+								| slice: 0,1
+%}{%
+							if first_char == '+'
+%}{%
+								assign processed_line = processed_line
+									| replace_first: '+',''
+									| prepend: '+ <!-- .element: class="fragment" -->'
+%}{%
+							endif
+							%}{{ processed_line }}{% comment %}Following line break is important{% endcomment %}
+{%
+						endfor
+%}
 					</script>
 				</section>
 				{% endfor %}

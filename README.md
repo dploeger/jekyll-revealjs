@@ -170,9 +170,9 @@ Or, if you find it cleaner, like this:
 ```markdown
 # Slide
 
--[+] This
--[+] will
--[+] come one by one
++ This
++ will
++ come one by one
 ```
 
 ### Slide backgrounds
