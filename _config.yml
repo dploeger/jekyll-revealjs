@@ -2,13 +2,13 @@
 title: Jekyll and Reveal.js
 
 # The Reveal theme
-reveal_theme: black.css
+reveal_theme: at.css
 
 # The Reveal transition
 reveal_transition: default
 
 # Path to the used theme (defaults to the Reveal.js standard theme path)
-reveal_theme_path: assets/reveal.js/css/theme/ 
+reveal_theme_path: assets/at-theme/
 
 # Additional custom CSS paths
 extra_css: 
@@ -33,3 +33,5 @@ markdown: redcarpet
 highlighter: rouge
 markdown_ext: ignoreme
 
+sass:
+  sass_dir: assets
