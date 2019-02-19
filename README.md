@@ -177,6 +177,23 @@ To modify the background of the current slide, **jekyll-reveal.js** simplifies t
 This slide has a white background
 ```
 
+#### Image backgrounds
+
+You can also set image backgrounds:
+
+```markdown
+
+# Slide
+
+<backgroundimage>{{ site.github.url }}/images/image.jpg</backgroundimage>
+<backgroundimageopacity>0.25</backgroundimageopacity>
+
+This slide has an image background
+
+```
+
+Note: `{{ site.github.url }}` expands to the URL of your hosted site, but you could also use remote URLs.
+
 ### Speaker notes
 
 To include speaker notes, add `Note:` on a separate line and write your notes below:
