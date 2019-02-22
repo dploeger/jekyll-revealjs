@@ -2,7 +2,9 @@
 
 It's also possible to do fragments.
 
-- You can use &lt;fragment/&gt; to step your list items
-- like <fragment/>
-- this <fragment/>
--[+] or using ‘-&lsqb;+&rsqb;’ for your list items
+- Start the line with ‘+’ instead of ‘-’ for your fragment item like this:  
+  `+ This is a fragment`
++ This is a fragment
++ Your fragment may contain the ‘+’ character
+
+<fragment/>You can use &lt;fragment/&gt; to step other content.

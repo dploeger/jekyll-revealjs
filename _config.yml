@@ -1,5 +1,10 @@
 # Your presentation title
-title: Jekyll and Reveal.js
+
+# Your presentation description (optional)
+description: A framework for easily creating beautiful presentations using HTML
+
+# Your name (optional)
+author: jekyll-revealjs contributors
 
 # The Reveal theme
 reveal_theme: at.css
@@ -28,7 +33,13 @@ reveal_dependencies:
 # Reveal.js subdirectory
 reveal_path: assets/reveal.js/
 
+# Exclude directories and/or files from the conversion
+exclude:
+  - Gemfile*
+  - LICENSE
+  - README.md
+
 # Don't change anything below
-markdown: redcarpet
+markdown: kramdown
 highlighter: rouge
 markdown_ext: ignoreme
