@@ -6,5 +6,6 @@ It's also possible to do fragments.
   `+ This is a fragment`
 + This is a fragment
 + Your fragment may contain the ‘+’ character
+    + You can also indent fragments
 
 <fragment/>You can use &lt;fragment/&gt; to step other content.

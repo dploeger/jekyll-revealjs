@@ -62,14 +62,13 @@
 								| replace:'<backgroundimageopacity>','<!-- .slide: data-background-opacity="'
 								| replace:'</backgroundimageopacity>','" -->'
 %}{%
-							assign first_char = line
+							assign first_char = line | strip
 								| slice: 0,1
 %}{%
 							if first_char == '+'
 %}{%
 								assign processed_line = processed_line
-									| replace_first: '+',''
-									| prepend: '+ <!-- .element: class="fragment" -->'
+									| replace_first: '+','+ <!-- .element: class="fragment" -->'
 %}{%
 							endif
 							%}{{ processed_line }}{% comment %}Following line break is important{% endcomment %}
