@@ -4,22 +4,48 @@
 	<head>
 		<meta charset="utf-8">
 
-		{% if site.title %}<title>{{ site.title }}</title>{% endif %}
-
-		{% if site.description %}<meta name="description" content="{{ site.description }}">{% endif %}
-		{% if site.author %}<meta name="author" content="{{ site.author }}">{% endif %}
+		<!--Title-->
+    <title>
+      {% if page.title %}
+        {{ page.title }} | {{ site.title }}
+      {% else %}
+        {{ site.title }}
+      {% endif %}
+    </title>
+		
+		<!--Author-->
+		{% if page.author %}
+			<meta name="author" content="{{ page.author }}" />
+		{% else %}
+			<meta name="author" content="{{ site.title }}" />
+		{% endif %}
+				
+    <!-- Description/excerpt -->
+    {% if page.excerpt %}
+      <meta name="description" content="{{ page.excerpt }}" />
+    {% else %}
+      <meta name="description" content="{{ site.description }}">
+    {% endif %}
+		
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 		<link rel="stylesheet" href="{{ site.reveal_path }}css/reveal.css">
-		<link rel="stylesheet" href="{{ site.reveal_theme_path }}{{ site.reveal_theme }}" id="theme">
-{% if site.extra_css %}
-	{% for css_file in site.extra_css %}
-		<link rel="stylesheet" href="{{ css_file }}">
-	{% endfor %}
-{% endif %}
+		
+		<!--theme-->
+		{% if page.theme %}
+			<link rel="stylesheet" href="{{ site.baseurl }}{{ page.theme }}" id="theme">
+		{% else %}
+			<link rel="stylesheet" href="{{ site.reveal_theme_path }}{{ site.reveal_theme }}" id="theme">
+		{% endif %}
+		
+		{% if site.extra_css %}
+			{% for css_file in site.extra_css %}
+				<link rel="stylesheet" href="{{ css_file }}">
+			{% endfor %}
+		{% endif %}
 
 		<!-- For syntax highlighting -->
 		{% if site.highlight_style_sheet %}
@@ -45,11 +71,13 @@
 
 			<div class="slides">
 
-				{% for post in site.posts reversed %}
-				<section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$" data-notes="^Note:">
+        <section data-markdown
+                 data-separator="<!--horizontal-->"
+                 data-separator-vertical="<!--vertical-->"
+								 data-notes="^Note:">
 					<script type="text/template">
 {%
-						assign lines = post.content | newline_to_br | strip_newlines | split: "<br />"
+						assign lines = content | newline_to_br | strip_newlines | split: "<br />"
 %}{%
 						for line in lines
 %}{% 
@@ -77,7 +105,6 @@
 %}
 					</script>
 				</section>
-				{% endfor %}
 
 			</div>
 

@@ -30,10 +30,10 @@ First, [install Jekyll][]. After that, clone this repository and create a branch
 
 Clean the Example presentation:
 
-    git rm _posts/*
-    mkdir _posts
+    git rm _slides/*
+    mkdir _slides
 
-After that, add your slides into the `_posts` subdirectory in clean Markdown syntax and you're ready to build your presentation with Jekyll:
+After that, add your slides into the `_slides` subdirectory in clean Markdown syntax (but with a `.html` extension) and you're ready to build your presentation with Jekyll:
 
     jekyll build
 
@@ -41,26 +41,13 @@ If you don’t have Jekyll installed (but you do have Docker) then you can just 
 
      docker-compose up
 
-You can even manage multiple presentations using the power of Git. Simply branch from the master branch to create a new presentation:
-
-    git checkout master
-    git branch presentation2
-    git checkout presentation2
-
 ## Slide filenames
 
-Because we're using Jekyll [posts][] to easily gather the slides for the presentation, we use their filename conventions with the following syntax:
+Filename follows:
 
-    <year>-<month>-<day>-<title>.md
-
-We recommend naming the files like
-
-    0000-01-01-welcome.md
-    0000-01-02-topics.md
-
-and so forth.
-
-Jekyll will assume that each post has been made on the first of January, 2001 (which is of no interest for a presentation). The additional number is for sorting purposes. After that comes a title to identify the specific slide (which is actually only for the presentation author, Jekyll doesn't care about it).
+    <year>-<month>-<day>-<title>.html
+		
+One file for one presentation.
 
 ## Configuring the presentation
 
@@ -121,16 +108,16 @@ Don't mess with the `reveal.js` subdirectory as it is a submodule and doesn't ad
 
 Reveal.js already includes a Markdown interpreter, which we use for **jekyll-reveal.js**. We have already configured it and included some simplification just for you!
 
-### Multiple slides
+### Horizontal slides
 
-To use multiple slides in one slide file, use a newline, three dashes and another newline like this:
+To use multiple slides in one slide file, use a newline, `<!--horizontal-->` and another newline like this:
 
 ```markdown
 # Slide 1
 
 This is the content of Slide 1
 
----
+<!--horizontal-->
 
 # Slide 2
 
@@ -139,14 +126,14 @@ This is the content of Slide 2
 
 ### Vertical slides
 
-To use vertical slides, do the same, but use two dashes:
+To use vertical slides, do the same, but use `<!--vertical-->`:
 
 ```markdown
 # Slide 1
 
 This is the content of Slide 1
 
---
+<!--vertical-->
 
 And this is a vertical slide below Slide 1
 ```
