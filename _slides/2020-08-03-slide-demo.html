@@ -1,0 +1,117 @@
+---
+layout: reveal
+title:  slide demo _ example from jekyll-revealjs
+author: dploeger/jekyll-revealjs
+# last update date
+date:   2020-08-03 13:30:00 +0200
+# first published date
+published: 2020-08-03 13:30:00 +0200
+categories: [slide]
+tags: [slide, reveal.js, demo]
+excerpt: This is a demo for combination of Jekyll and Reveal.js. It is the example from jekyll-revealjs.
+---
+
+## Welcome
+
+Welcome to the jekyll-reveal.js example presentation.
+
+<!--horizontal-->
+
+## Slide 2
+
+This is the second slide. And it's just another file inside the _posts-directory.
+
+It is identified as slide 2, because it has a "2" after the mandatory date-part (0000-01-01) in its
+filename. (It's called 0000-01-02-slides.md)
+
+<!--vertical-->
+
+This is a third slide, although we're still in 0000-01-02-slides.md.
+
+<!--horizontal-->
+
+## Fragments
+
+It's also possible to do fragments.
+
+- Start the line with ‘+’ instead of ‘-’ for your fragment item like this:  
+  `+ This is a fragment`
++ This is a fragment
++ Your fragment may contain the ‘+’ character
+    + You can also indent fragments
+
+<fragment/>You can use &lt;fragment/&gt; to step other content.
+
+<!--horizontal-->
+
+## Vertical Slides
+
+Or
+
+<!--vertical-->
+
+Even
+
+<!--vertical-->
+
+Vertical
+
+<!--vertical-->
+
+Slides
+
+<!--horizontal-->
+
+# Backgrounds
+
+<background>green</background> 
+
+Or use different backgrounds.
+
+&lt;background&gt;green&lt;/background&gt;
+
+<!--horizontal-->
+
+With syntax highlighting for your code:
+
+```python
+import pprint
+
+class MyClass(object):
+    def __init__(self):
+        self.a = 1
+
+    @classmethod
+    def some_classmethod(cls, a):
+        self.a = a
+
+if __name__ == "__main__":
+    # This is a comment
+    pprint.pprint({'Key1': 0x34, 'Key2': 'Hi'})
+```
+
+<!--horizontal-->
+
+# A hidden treasure
+
+This slide has a hidden treasure. Press "s" to see the speaker notes.
+
+Note:
+
+THIS TEXT IS HIDDEEEEEEEN! :)
+
+<!--horizontal-->
+
+# Image Backgrounds
+
+<backgroundimage>https://farm4.staticflickr.com/3743/11167478016_1714b57b28_b.jpg</backgroundimage>
+<backgroundimageopacity>0.25</backgroundimageopacity>
+
+You can also set image backgrounds.
+
+&lt;backgroundimage&gt;
+&#123;&#123; '/images/image.jpg' | relative_url &#125;&#125;/
+&lt;/backgroundimage&gt;
+&lt;backgroundimageopacity&gt;0.25&lt;/backgroundimageopacity&gt;
+
+<small><a href="https://www.flickr.com/photos/31518985@N04/11167478016">"Light through autumn leaves, Alice Holt Forest, Surrey, UK"</a> by <a href="https://www.flickr.com/photos/31518985@N04">ambabheg</a> is licensed under <a href="https://creativecommons.org/licenses/by/2.0"> CC BY 2.0 </a></small>
