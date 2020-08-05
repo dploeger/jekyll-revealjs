@@ -41,17 +41,13 @@ If you don’t have Jekyll installed (but you do have Docker) then you can just 
 
      docker-compose up
 
-You can even manage multiple presentations using the power of Git. Simply branch from the master branch to create a new presentation:
-
-    git checkout master
-    git branch presentation2
-    git checkout presentation2
-
 ## Slide filenames
 
 Filename follows:
 
     <year>-<month>-<day>-<title>.html
+		
+One file for one presentation.
 
 ## Configuring the presentation
 
@@ -112,20 +108,32 @@ Don't mess with the `reveal.js` subdirectory as it is a submodule and doesn't ad
 
 Reveal.js already includes a Markdown interpreter, which we use for **jekyll-reveal.js**. We have already configured it and included some simplification just for you!
 
-### Multiple slides
+### Horizontal slides
 
-In general, one file for one presentation.
-
-### Vertical slides
-
-To use vertical slides, do the same, but use two dashes:
+To use multiple slides in one slide file, use a newline, `<!--horizontal-->` and another newline like this:
 
 ```markdown
 # Slide 1
 
 This is the content of Slide 1
 
---
+<!--horizontal-->
+
+# Slide 2
+
+This is the content of Slide 2
+```
+
+### Vertical slides
+
+To use vertical slides, do the same, but use `<!--vertical-->`:
+
+```markdown
+# Slide 1
+
+This is the content of Slide 1
+
+<!--vertical-->
 
 And this is a vertical slide below Slide 1
 ```
