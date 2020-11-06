@@ -62,13 +62,22 @@
 								| replace:'<backgroundimageopacity>','<!-- .slide: data-background-opacity="'
 								| replace:'</backgroundimageopacity>','" -->'
 %}{%
-							assign first_char = line | strip
+							assign first_char = line
 								| slice: 0,1
+%}{%
+							assign first_two = line
+								| slice: 0,2
 %}{%
 							if first_char == '+'
 %}{%
 								assign processed_line = processed_line
-									| replace_first: '+','+ <!-- .element: class="fragment" -->'
+									| replace_first: '+',''
+									| prepend: '+ <!-- .element: class="fragment" -->'
+%}{%
+							elsif first_two == '\+'
+%}{%
+								assign processed_line = processed_line
+									| replace_first: '\+', '+'
 %}{%
 							endif
 							%}{{ processed_line }}{% comment %}Following line break is important{% endcomment %}
