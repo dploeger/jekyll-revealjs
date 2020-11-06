@@ -13,7 +13,7 @@
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="{{ site.reveal_path }}css/reveal.css">
+		<link rel="stylesheet" href="{{ site.reveal_path }}dist/reveal.css">
 		<link rel="stylesheet" href="{{ site.reveal_theme_path }}{{ site.reveal_theme }}" id="theme">
 {% if site.extra_css %}
 	{% for css_file in site.extra_css %}
@@ -25,7 +25,7 @@
 		{% if site.highlight_style_sheet %}
 			{% assign highlight_style_sheet = site.highlight_style_sheet %}
 		{% else %}
-			{% capture highlight_style_sheet %}{{ site.reveal_path }}lib/css/zenburn.css {% endcapture %}
+			{% capture highlight_style_sheet %}{{ site.reveal_path }}plugin/highlight/zenburn.css {% endcapture %}
 		{% endif %}
 		<link rel="stylesheet" href="{{ highlight_style_sheet }}">
 
@@ -47,7 +47,7 @@
 
 				{% for post in site.posts reversed %}
 				<section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$" data-notes="^Note:">
-					<script type="text/template">
+					<textarea data-template>
 {%
 						assign lines = post.content | newline_to_br | strip_newlines | split: "<br />"
 %}{%
@@ -75,7 +75,7 @@
 {%
 						endfor
 %}
-					</script>
+					</textarea>
 				</section>
 				{% endfor %}
 
@@ -83,21 +83,37 @@
 
 		</div>
 
-		<script src="{{ site.reveal_path }}lib/js/head.min.js"></script>
-		<script src="{{ site.reveal_path }}js/reveal.js"></script>
-
+		<script src="{{ site.reveal_path }}dist/reveal.js"></script>
+		<script src="{{ site.reveal_path }}plugin/markdown/markdown.js"></script>
+		<script src="{{ site.reveal_path }}plugin/zoom/zoom.js"></script>
+		<script src="{{ site.reveal_path }}plugin/highlight/highlight.js"></script>
+		{% if site.reveal_notes_server %}
+			<script src="{{ site.reveal_path }}socketio/socket.io.js"></script>
+			<!-- The notes server is a stand-alone module and must be separately installed using npm.
+			     See https://github.com/reveal/notes-server for more details. -->
+			<script src="{{ site.reveal_path }}node_modules/reveal-notes-server/client.js"></script>
+		{% else %}
+			<script src="{{ site.reveal_path }}plugin/notes/notes.js"></script>
+		{% endif %}
 		<script>
 
 			// Full list of configuration options available here:
 			// https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
+			let r = Reveal();
+			r.initialize({
 				controls: true,
 				progress: true,
 				history: true,
 				center: true,
 
-				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				theme: r.getQueryHash().theme, // available themes are in /css/theme
 				transition: '{{ site.reveal_transition }}', // default/cube/page/concave/zoom/linear/fade/none
+                plugins: [
+                    RevealMarkdown,
+                    RevealHighlight,
+                    RevealNotes,
+                    RevealZoom,
+                ],
 
 				{% if site.reveal_options %}
 					{% if site.reveal_options.first.first %}
@@ -111,21 +127,11 @@
 					{% endif %}
 				{% endif %}
 
-				// Optional libraries used to extend on reveal.js
+				// The dependencies option is deprecated as of reveal.js 4.0,
+				// but is kept in place for backwards compatibility reasons.
 				dependencies: [
-					{ src: '{{ site.reveal_path }}lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: '{{ site.reveal_path }}plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: '{{ site.reveal_path }}plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: '{{ site.reveal_path }}plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: '{{ site.reveal_path }}plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-					{% if site.reveal_notes_server %}
-					{ src: '{{ site.reveal_path }}socket.io/socket.io.js', async: true },
-					{ src: '{{ site.reveal_path }}plugin/notes-server/client.js', async: true }
-					{% else %}
-					{ src: '{{ site.reveal_path }}plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
-					{% endif %}
 					{% if site.reveal_dependencies %}
-					, {{ site.reveal_dependencies }}
+					{{ site.reveal_dependencies }}
 					{% endif %}
 				]
 			});
