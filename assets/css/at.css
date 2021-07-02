@@ -1,3 +1,9 @@
+---
+---
+:root {
+    --at-blue: #222B5E;
+}
+
 /**
  * Auto Trader theme for reveal.js.
  */
@@ -27,8 +33,7 @@
  * GLOBAL STYLES
  *********************************************/
 body {
-    background: #FF4436;
-    background-color: #FF4436;
+    background-color: {{ site.background_color | default: "var(--at-blue)" }};
 }
 
 .reveal {

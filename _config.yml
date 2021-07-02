@@ -40,6 +40,8 @@ exclude:
   - LICENSE
   - README.md
 
+background_color: "#222B5E"
+
 # Don't change anything below
 markdown: kramdown
 highlighter: rouge
