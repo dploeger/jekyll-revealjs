@@ -40,7 +40,7 @@ exclude:
   - LICENSE
   - README.md
 
-background_color: "#222B5E"
+background_color: "#222B5E" # Make sure hex codes are in double quotes to avoid the octothorpe being interpreted as a comment
 
 # Don't change anything below
 markdown: kramdown
