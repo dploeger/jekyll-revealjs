@@ -23,13 +23,13 @@ See the [example presentation][] created using the contents in this repository a
 
 ## Howto
 
-First, [install Jekyll][]. After that, clone this repository and create a branch for your new presentation:
+First, [install Jekyll][]. After that, create a new slides folder bu using git subtree:
 
-    git clone --recursive https://github.com/dploeger/jekyll-revealjs.git
-    git checkout -b presentation1
+    git subtree add --prefix FOLDER_NAME git@github.com:CfirTsabari/jekyll-revealjs.git master  --squash
+    cd FOLDER_NAME
+
 
 Clean the Example presentation:
-
     git rm _posts/*
     mkdir _posts
 
@@ -41,11 +41,9 @@ If you don’t have Jekyll installed (but you do have Docker) then you can just 
 
      docker-compose up
 
-You can even manage multiple presentations using the power of Git. Simply branch from the master branch to create a new presentation:
-
-    git checkout master
-    git branch presentation2
-    git checkout presentation2
+You can even manage multiple presentations using multiple subtree commands:
+    git subtree add --prefix FOLDER_NAME_1 git@github.com:CfirTsabari/jekyll-revealjs.git master  --squash
+    git subtree add --prefix FOLDER_NAME_2 git@github.com:CfirTsabari/jekyll-revealjs.git master  --squash
 
 ## Slide filenames
 
