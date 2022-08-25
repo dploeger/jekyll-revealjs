@@ -61,6 +61,8 @@
 								| replace:'</backgroundimage>','" --> '
 								| replace:'<backgroundimageopacity>','<!-- .slide: data-background-opacity="'
 								| replace:'</backgroundimageopacity>','" -->'
+								| replace:'<mermaid>','<section class="diagram-slide"><span class="diagram-data" style="display:none;">'
+								| replace:'</mermaid>','</span><div class="diagram-display"></div></section>'
 %}{%
 							assign first_char = line | strip
 								| slice: 0,1
@@ -82,6 +84,8 @@
 			</div>
 
 		</div>
+		
+		<script defer src="https://cdn.jsdelivr.net/npm/mermaid@9.1.6/dist/mermaid.min.js"></script>
 
 		<script src="{{ site.reveal_path }}lib/js/head.min.js"></script>
 		<script src="{{ site.reveal_path }}js/reveal.js"></script>
