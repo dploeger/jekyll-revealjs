@@ -29,7 +29,8 @@ reveal_notes_server: false
 reveal_options: 
 
 # Additional reveal.js dependencies
-reveal_dependencies: 
+reveal_dependencies:
+  - "{ src: 'js/mermaid/mermaid.js' },"
 
 # Reveal.js subdirectory
 reveal_path: reveal.js/
