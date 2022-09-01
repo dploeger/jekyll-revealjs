@@ -61,8 +61,8 @@
 								| replace:'</backgroundimage>','" --> '
 								| replace:'<backgroundimageopacity>','<!-- .slide: data-background-opacity="'
 								| replace:'</backgroundimageopacity>','" -->'
-								| replace:'<mermaid>','<section class="diagram-slide"><span class="diagram-data" style="display:none;">'
-								| replace:'</mermaid>','</span><div class="diagram-display"></div></section>'
+								| replace:'<mermaid>','<!-- .slide: class="diagram-slide" --><span class="diagram-data" style="display:none;">'
+								| replace:'</mermaid>','</span><div class="diagram-display"></div>'
 %}{%
 							assign first_char = line | strip
 								| slice: 0,1
