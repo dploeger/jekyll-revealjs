@@ -3,8 +3,8 @@
 (function(){
 
   function fixUpSvgSize(divElem, svgElem) {
-    var width = svgElem.getAttribute('width');
-    var height = svgElem.getAttribute('height');
+    var width = svgElem.getBoundingClientRect().width;
+    var height = svgElem.getBoundingClientRect().height;
     var divWidth = divElem.offsetWidth;
     var divHeight = divElem.offsetHeight;
 
