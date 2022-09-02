@@ -30,10 +30,12 @@ reveal_options:
 
 # Additional reveal.js dependencies
 reveal_dependencies:
-  - "{ src: 'js/mermaid/mermaid.js' },"
 
 # Reveal.js subdirectory
 reveal_path: reveal.js/
+
+# mermaid.js diagram integration
+mermaid_diagrams: true
 
 # Exclude directories and/or files from the conversion
 exclude:
