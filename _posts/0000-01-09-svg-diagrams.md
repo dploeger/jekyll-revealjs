@@ -10,4 +10,9 @@ graph TD;
     A-->C;
     B-->D;
     C-->D;
+    D-->E
 </mermaid>
+<!-- .element: style="height: 250px;" -->
+
+<!-- .element: style="font-size: 50%;" -->You can tweak the height of the diagram by following the closing tag with an [element attribute](https://revealjs.com/markdown/#element-attributes):  
+`<!-- .element: style="height: 400px;" -->`
