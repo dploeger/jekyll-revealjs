@@ -20,8 +20,9 @@
 		<link rel="stylesheet" href="{{ css_file }}">
 	{% endfor %}
 {% endif %}
+{% if site.mermaid_diagrams %}
 		<link rel="stylesheet" href="{{ 'css/mermaid.css' | relative_url }}">
-
+{% endif %}
 		<!-- For syntax highlighting -->
 		{% if site.highlight_style_sheet %}
 			{% assign highlight_style_sheet = site.highlight_style_sheet %}
@@ -85,9 +86,6 @@
 			</div>
 
 		</div>
-		
-		<script defer src="https://cdn.jsdelivr.net/npm/mermaid@9.1.6/dist/mermaid.min.js"></script>
-
 		<script src="{{ site.reveal_path }}lib/js/head.min.js"></script>
 		<script src="{{ site.reveal_path }}js/reveal.js"></script>
 
@@ -123,6 +121,10 @@
 					{ src: '{{ site.reveal_path }}plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: '{{ site.reveal_path }}plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
 					{ src: '{{ site.reveal_path }}plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{% if site.mermaid_diagrams %}
+					{ src: 'https://cdn.jsdelivr.net/npm/mermaid@9.1.6/dist/mermaid.min.js'},
+					{ src: '{{ 'js/mermaid/mermaid.js' | relative_url }}'},
+					{% endif %}
 					{% if site.reveal_notes_server %}
 					{ src: '{{ site.reveal_path }}socket.io/socket.io.js', async: true },
 					{ src: '{{ site.reveal_path }}plugin/notes-server/client.js', async: true }
