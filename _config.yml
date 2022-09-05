@@ -29,10 +29,13 @@ reveal_notes_server: false
 reveal_options: 
 
 # Additional reveal.js dependencies
-reveal_dependencies: 
+reveal_dependencies:
 
 # Reveal.js subdirectory
 reveal_path: assets/reveal.js/
+
+# mermaid.js diagram integration
+mermaid_diagrams: true
 
 # Exclude directories and/or files from the conversion
 exclude:

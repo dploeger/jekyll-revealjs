@@ -84,6 +84,7 @@ You can also further customize the presentation:
 
 - `extra_css`: Additional CSS files added after the reveal [theme][]
 - `highlight_style_sheet`: CSS theme for highlight.js [reveal.js/lib/css/zenburn.css](reveal.js/lib/css/zenburn.css)
+- `mermaid_diagrams`: Feature toggle (defaults to `false`) for [mermaid.js](https://mermaid-js.github.io/) diagrams
 
 ### Specifying reveal options and dependencies
 
@@ -229,3 +230,34 @@ This is only displayed in the speaker notes.
 [dependencies]: https://github.com/hakimel/reveal.js#dependencies
 [posts]: https://jekyllrb.com/docs/posts/#creating-posts
 [theme]: https://github.com/hakimel/reveal.js#theming
+
+### SVG Diagrams
+
+You can use [mermaid-js](https://mermaid-js.github.io/mermaid/) to create SVG diagrams.
+
+Once you’ve enabled the feature by setting `mermaid_diagrams` to `true` in `_config.yml`, code like this:
+
+```markdown
+<mermaid>
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+    D-->E
+</mermaid>
+```
+
+should render like this:
+
+```mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+    D-->E
+```
+
+You can tweak the height of the diagram by following the closing tag with an [element attribute](https://revealjs.com/markdown/#element-attributes): 
+`<!-- .element: style="height: 400px;" -->`.
