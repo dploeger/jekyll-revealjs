@@ -123,7 +123,7 @@
 					{ src: '{{ site.reveal_path }}plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
 					{% if site.mermaid_diagrams %}
 					{ src: 'https://cdn.jsdelivr.net/npm/mermaid@9.1.6/dist/mermaid.min.js'},
-					{ src: '{{ 'js/mermaid/mermaid.js' | relative_url }}'},
+					{ src: '{{ 'js/mermaid/reveal-js-mermaid-plugin.js' | relative_url }}'},
 					{% endif %}
 					{% if site.reveal_notes_server %}
 					{ src: '{{ site.reveal_path }}socket.io/socket.io.js', async: true },
