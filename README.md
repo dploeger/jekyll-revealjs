@@ -249,14 +249,12 @@ graph TD;
 should render like this:
 
 ```mermaid
-<mermaid>
 graph TD;
     A-->B;
     A-->C;
     B-->D;
     C-->D;
     D-->E
-</mermaid>
 ```
 
 You can tweak the height of the diagram by following the closing tag with an [element attribute](https://revealjs.com/markdown/#element-attributes): 
