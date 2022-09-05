@@ -14,6 +14,7 @@ A Jekyll-based framework for creating presentations based on Reveal.js and Markd
   - [Fragments](#fragments)
   - [Slide backgrounds](#slide-backgrounds)
   - [Speaker notes](#speaker-notes)
+  - [SVG Diagrams](#svg-diagrams)
 
 ## Introduction
 
