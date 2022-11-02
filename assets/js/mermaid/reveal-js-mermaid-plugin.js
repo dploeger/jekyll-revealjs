@@ -90,4 +90,10 @@
     }
   });
 
+  Reveal.addEventListener('overviewhidden', function (event) {
+      if (event.currentSlide) {
+          destroyDiagram(event.currentSlide);
+          showDiagram(event.currentSlide);
+      }
+  });
 }());
