@@ -9,3 +9,8 @@ div.diagram-display svg {
     width: 100%;
     height: 100%;
 }
+span.edgeLabel, .edgeLabel rect {
+    background: none !important;
+    backdrop-filter: blur(10px);
+    fill: none !important;
+}
