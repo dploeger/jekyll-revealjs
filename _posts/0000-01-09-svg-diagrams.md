@@ -1,10 +1,8 @@
 # SVG Diagrams
 
-<background>white</background>
-
 You can use [mermaid-js](https://mermaid-js.github.io/mermaid/) to create SVG diagrams.
 
-(enable the feature by setting `mermaid_diagrams` to `true` in `_config.yml`)
+(in `_config.yml` enable the feature by setting `mermaid_diagrams` to `true`, and override the [theme](https://mermaid-js.github.io/mermaid/#/theming?id=deployable-themes) with `mermaid_theme`)
 
 <!-- .element: style="font-size: 50%;" -->
 
@@ -14,7 +12,7 @@ graph TD;
     A-->C;
     B-->D;
     C-->D;
-    D-->E
+    D-->|an edge label| E
 </mermaid>
 <!-- .element: style="height: 250px;" -->
 

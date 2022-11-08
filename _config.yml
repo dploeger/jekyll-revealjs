@@ -36,6 +36,7 @@ reveal_path: assets/reveal.js/
 
 # mermaid.js diagram integration
 mermaid_diagrams: true
+mermaid_theme: dark # See https://mermaid-js.github.io/mermaid/#/theming?id=deployable-themes
 
 # Exclude directories and/or files from the conversion
 exclude:
