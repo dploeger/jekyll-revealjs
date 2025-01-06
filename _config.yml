@@ -8,13 +8,13 @@ description: A framework for easily creating beautiful presentations using HTML
 author: jekyll-revealjs contributors
 
 # The Reveal theme
-reveal_theme: black.css
+reveal_theme: at.css
 
 # The Reveal transition
 reveal_transition: default
 
 # Path to the used theme (defaults to the Reveal.js standard theme path)
-reveal_theme_path: reveal.js/css/theme/ 
+reveal_theme_path: assets/css/
 
 # Additional custom CSS paths
 extra_css: 
@@ -32,7 +32,7 @@ reveal_options:
 reveal_dependencies:
 
 # Reveal.js subdirectory
-reveal_path: reveal.js/
+reveal_path: assets/reveal.js/
 
 # mermaid.js diagram integration
 mermaid_diagrams: true
@@ -45,8 +45,9 @@ exclude:
   - LICENSE
   - README.md
 
+background_color: "#222B5E" # Make sure hex codes are in double quotes to avoid the octothorpe being interpreted as a comment
+
 # Don't change anything below
 markdown: kramdown
 highlighter: rouge
 markdown_ext: ignoreme
-
