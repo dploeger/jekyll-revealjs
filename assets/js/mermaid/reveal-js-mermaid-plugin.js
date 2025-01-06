@@ -66,7 +66,7 @@
     var dataElem = getDataElem(slide);
     var svgDiv = getDisplayDiv(slide);
 
-    svgDiv.innerHTML = dataElem.innerHTML;
+    svgDiv.innerHTML = `${dataElem.getAttribute('data-mermaid-config')}\n${dataElem.getElementsByTagName('code')[0].innerHTML}`;
 
     mermaid.flowchartConfig
     var config = {};
