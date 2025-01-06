@@ -22,18 +22,7 @@
       return element.nodeName === 'SPAN';
     });
 
-    var diagramSource = slide.getAttribute('data-diagram-source');
-    if (diagramSource) {
-      var diagramSlides = document.getElementsByClassName('diagram-slide');
-
-      var sourceSlides = Array.prototype.filter.call(diagramSlides, function(slide) {
-        return slide.getAttribute('data-state') === diagramSource;
-      });
-
-      return getDataElem(sourceSlides[0]);
-    } else {
-      return spans[0];
-    }
+    return spans[0];
   }
 
   function getDisplayDiv(slide) {
