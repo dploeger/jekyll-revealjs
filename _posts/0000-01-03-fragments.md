@@ -9,3 +9,12 @@ It's also possible to do fragments.
     + You can also indent fragments
 
 <fragment/>You can use &lt;fragment/&gt; to step other content.
+
+--
+
+To start a line with a literal `+`, use `\+`:
+
+```diff
+-I am a grate speller
+\+I am a great speller
+```
