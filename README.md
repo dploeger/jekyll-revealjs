@@ -34,8 +34,6 @@ Clean the Example presentation:
     git rm _posts/*
     mkdir _posts
 
-Alternatively, you can create a new Jekyll site from scratch and refer to this repository as a remote theme using the [Jekyll Remote Theme plugin](https://github.com/benbalter/jekyll-remote-theme#usage) (supported on GitHub Pages).
-
 After that, add your slides into the `_posts` subdirectory in clean Markdown syntax and you're ready to build your presentation with Jekyll:
 
     jekyll build
